@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import 'zone.js/dist/zone-node';
-import { renderModuleFactory } from '@angular/platform-server'
-import { enableProdMode } from '@angular/core'
+import { renderModuleFactory } from '@angular/platform-server';
+import { enableProdMode } from '@angular/core';
 import * as express from 'express';
 import * as compression from 'compression';
 import { join } from 'path';
@@ -20,6 +20,9 @@ const template = readFileSync(join(DIST_FOLDER, 'browser', 'index.html')).toStri
 const { AppServerModuleNgFactory } = require('main.server');
 
 app.engine('html', (_, options, callback) => {
+
+  console.log(options.req.url);
+
   const opts = { document: template, url: options.req.url };
 
   renderModuleFactory(AppServerModuleNgFactory, opts)

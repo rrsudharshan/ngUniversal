@@ -22,6 +22,7 @@ import { AboutComponent } from './pages/about/about.component';
       { path: 'about', component: AboutComponent },
       { path: '**', redirectTo: '/' }
     ])
+
   ],
   providers: [],
   bootstrap: [AppComponent]

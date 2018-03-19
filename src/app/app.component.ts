@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
 
     if (!this.dogs) {
       this.http
-        .get('https://dog.ceo/api/breeds/list/all')
+        .get('https://jsonplaceholder.typicode.com/users')
         .subscribe(data => {
           this.dogs = data;
           this.state.set(DOGS_KEY, data as any);
